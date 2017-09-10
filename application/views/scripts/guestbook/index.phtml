@@ -8,8 +8,11 @@
 <br>
 <dl>
     <?php foreach ($this->entries as $entry): ?>
+        <dt><?php echo $this->escape($entry->username) ?></dt>
         <dt><?php echo $this->escape($entry->email) ?></dt>
         <dd><?php echo $this->escape($entry->comment) ?></dd>
+        <dd><?php echo $this->escape($entry->created) ?></dd>
+
     <?php endforeach ?>
 </dl>
 </br>

@@ -11,6 +11,8 @@ class Application_Model_Guestbook
     protected $_comment;
     protected $_created;
     protected $_email;
+    protected $_username;
+    protected $_userip;
     protected $_id;
     protected $_mapper;
     public function __construct(array $options = null)
@@ -46,6 +48,15 @@ class Application_Model_Guestbook
         }
         return $this;
     }
+    public function setUserIp($text)
+    {
+        $this->_userip = (string) $text;
+        return $this;
+    }
+    public function getUserIp()
+    {
+        return $this->_userip;
+    }
     public function setComment($text)
     {
         $this->_comment = (string) $text;
@@ -63,6 +74,15 @@ class Application_Model_Guestbook
     public function getEmail()
     {
         return $this->_email;
+    }
+    public function setUsername($username)
+    {
+        $this->_username = (string) $username;
+        return $this;
+    }
+    public function getUsername()
+    {
+        return $this->_username;
     }
     public function setCreated($ts)
     {
