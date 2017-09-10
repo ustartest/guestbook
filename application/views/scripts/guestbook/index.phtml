@@ -5,14 +5,31 @@
         ),
         'default',
         true) ?>">Sign Our Guestbook</a></p>
-<br>
-<dl>
-    <?php foreach ($this->entries as $entry): ?>
-        <dt><?php echo $this->escape($entry->username) ?></dt>
-        <dt><?php echo $this->escape($entry->email) ?></dt>
-        <dd><?php echo $this->escape($entry->comment) ?></dd>
-        <dd><?php echo $this->escape($entry->created) ?></dd>
 
+<style type="text/css">
+    TABLE {
+        width: 500px; /* Ширина таблицы */
+        border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    }
+    TD, TH {
+        padding: 3px; /* Поля вокруг содержимого таблицы */
+        border: 1px solid black; /* Параметры рамки */
+    }
+    TH {
+        background: #b0e0e6; /* Цвет фона */
+    }
+</style>
+<table>
+    <tr>
+        <th>Имя пользователя</th><th>E-mail</th><th>Комментарий</th><th>Дата создания</th>
+    </tr>
+    <tr>
+    <?php foreach ($this->entries as $entry): ?>
+        <td><?php echo $this->escape($entry->username) ?></td>
+        <td><?php echo $this->escape($entry->email) ?></td>
+        <td><?php echo $this->escape($entry->comment) ?></td>
+        <td><?php echo $this->escape($entry->created) ?></td>
+    </tr>
     <?php endforeach ?>
-</dl>
-</br>
+
+</table>
