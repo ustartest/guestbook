@@ -50,6 +50,16 @@ class Application_Form_Guestbook extends Zend_Form
             )
         ));
 
+        // Add the userip
+        $this->addElement('text', 'userip', array(
+            'label'      => 'Ваш IP:',
+            'required'   => true,
+            'filters'    => array('StringTrim'),
+            'validators' => array(
+                array('validator' => 'StringLength', 'options' => array(0, 16))
+            )
+        ));
+
         // Add the comment
         $this->addElement('submit', 'add', array(
             'ignore'   => true,
